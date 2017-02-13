@@ -1,6 +1,6 @@
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin')
 var data = require('./docs/data')
-var PrettierPlugin = require('../src')
+//var PrettierPlugin = require('../src')
 
 module.exports = {
 
@@ -14,36 +14,36 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /(\.js$|\.jsx$)/, exclude: /node_modules/, loader: 'babel-loader' },
+      { test: /(\.js$)/, exclude: /node_modules/, loader: 'babel-loader' },
       { test: /\.json$/, loader: 'json-loader' },
       { test: /\.css/, exclude: /colors\.css/, loader: 'css-loader!cssnext-loader' }
     ]
   },
 
   plugins: [
-    new PrettierPlugin({
-      // Fit code within this line limit
-      printWidth: 80,
+    // new PrettierPlugin({
+    //   // Fit code within this line limit
+    //   printWidth: 80,
 
-      // Number of spaces it should use per tab
-      tabWidth: 2,
+    //   // Number of spaces it should use per tab
+    //   tabWidth: 2,
 
-      // If true, will use single instead of double quotes
-      singleQuote: false,
+    //   // If true, will use single instead of double quotes
+    //   singleQuote: false,
 
-      // Controls the printing of trailing commas wherever possible
-      trailingComma: false,
+    //   // Controls the printing of trailing commas wherever possible
+    //   trailingComma: false,
 
-      // Controls the printing of spaces inside object literals
-      bracketSpacing: true,
+    //   // Controls the printing of spaces inside object literals
+    //   bracketSpacing: true,
 
-      // If true, puts the `>` of a multi-line jsx element at the end of
-      // the last line instead of being alone on the next line
-      jsxBracketSameLine: false,
+    //   // If true, puts the `>` of a multi-line jsx element at the end of
+    //   // the last line instead of being alone on the next line
+    //   jsxBracketSameLine: false,
 
-      // Which parser to use. Valid options are 'flow' and 'babylon'
-      parser: 'babylon'
-    }),
+    //   // Which parser to use. Valid options are 'flow' and 'babylon'
+    //   parser: 'babylon'
+    // }),
     new StaticSiteGeneratorPlugin('bundle.js', ['/'], data)
   ],
 
