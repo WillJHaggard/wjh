@@ -1,0 +1,16 @@
+{
+  "name": "wjh",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/WillJHaggard/wjh.git",
+    "type": "git"
+  },
+  "author": "Will J. Haggard <will@magadesign.com> (http://magainteractive.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "prettier": "^0.16.0",
+    "prettier-webpack-plugin": "^0.0.2",
+    "webpack": "^2.2.1"
+  }
+}
